@@ -1,0 +1,41 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\basemap.toml',
+           'Postproc\TOML\obshead.toml',
+           'Postproc\TOML\simhead.toml',
+]
+
+[tsplot.Hydrograph] #plotting the basemap, wells, observation data
+mapplot = 'basemap_inset'
+figsize = [8, 4]
+plotdata = {hobout='simgwlevel'}
+xlabel = 'Year'
+ylabel = 'Groundwater Elevation (feet)'
+#x_datefmt = '%y'
+yrange = 20
+exttable = {csv='obswells'}
+text = [
+    {x=0.03, y=0.03, text='{wellname}\nLayer {layer}', va='bottom', ha='left'},
+]
+legend = true
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[tsplot.HydrographMon] #plotting the basemap, wells, observation data
+parent = 'HydrographYr'
+plotdata = {tseries=['obsgwlevelmon','simgwlevelmon']}
+
+[pdf.plotHydrograph]
+dpi = 200
+pages={tsplot = ['Hydrograph']}
+
+[tsplot.Headdiff]
+mapplot = 'basemap2'
+figsize = [8, 6]
+plotdata = {pstres='seasonal_head'}
+xlabel = 'Year'
+ylabel = 'Seasonal head difference (feet)'
+legend = true
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[ppdf.plotHydrographHdiff]
+dpi = 200
+pages={tsplot = ['Headdiff']}

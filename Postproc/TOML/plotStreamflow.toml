@@ -1,0 +1,59 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\basemap2.toml',
+           'Postproc\TOML\obsflow.toml',
+           'Postproc\TOML\simflow.toml',
+           'Postproc\TOML\pstres.toml',
+]
+
+
+[tsplot.Streamflow]
+mapplot = 'basemap_inset'
+figsize = [8, 6]
+plotdata = [{tseries='obsflow'}, {tseries='simflow'}]
+xlabel = 'Year'
+ylabel = 'Streamflow (cfs)'
+exttable = {csv='streamgage'}
+text = [
+    {x=0.97, y=0.97, text='{MFName}\n{SITENO}\n{SITENAME}', va='top', ha='right'},
+]
+legend = true
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[tsplot.Streamflow_log]
+parent = "Streamflow"
+yscale = 'log'
+
+[tsplot.Streamflow_Vol]
+parent = "Streamflow"
+plotdata = [{tseries='obsflow_vol'}, {tseries='simflow_vol'}]
+ylabel = 'Cumulative flow volume (acrefeet)'
+
+[shp.peco_leak]
+source = 'Postproc\Data\shp_AcmeToArtesiaSeepage.zip'
+plotarg = {color='r', linewidth=1.5, alpha=1.0, zorder=60}
+
+[mapplot.basemap3]
+parent = 'basemap2'
+plotdata2 = {shp=['peco_leak']}
+
+
+[tsplot.PecoLeakage]
+mapplot = 'basemap3'
+figsize = [8, 6]
+plotdata = {pstres='prleak'}
+xlabel = 'Year'
+ylabel = 'Baseflow of Pecos River (AFY)'
+legend = false
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[pdf.plotStreamflow]
+dpi = 200
+pages={tsplot = ['Streamflow']}
+
+[pdf.plotStreamflow_Log]
+dpi = 200
+pages={tsplot = ['Streamflow_log']}
+
+[pdf.plotStreamflow_Vol]
+dpi = 200
+pages={tsplot = ['Streamflow_Vol']}

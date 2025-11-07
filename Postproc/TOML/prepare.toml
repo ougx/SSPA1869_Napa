@@ -1,0 +1,13 @@
+include = ['Postproc\TOML\mf.toml', 'Postproc\TOML\obshead.toml']
+
+[prepare.obswell_bi] # prepare for bilinear interpolation
+model = {mf = 'Pecos'}
+sites = {csv = 'obswells'}
+
+[csv.isc]
+source = 'Postproc\Data\20250304_ISC_wells.csv'
+idcol = 'WELL_ID'
+
+[prepare.isc] # prepare for bilinear interpolation
+model = {mf = 'Pecos'}
+sites = {csv = 'isc'}

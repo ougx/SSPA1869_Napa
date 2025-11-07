@@ -1,0 +1,31 @@
+include = ['Postproc\TOML\mf.toml', 'Postproc\TOML\obshead.toml']
+
+[tseries.simgwlevel]
+source = 'Output_head.csv'
+stack = ['MF6Name', 'Simulated']
+resample = {rule='YS', func='last'}
+plotarg = {linewidth=1, marker='.', color='red', zorder=2} #
+legend = true
+
+[tseries.simgwlevelmon]
+source = 'Output_head.csv'
+stack = ['MF6Name', 'Simulated']
+#resample = {rule='ME',func='last'}
+plotarg = {linewidth=0.5, color='red', zorder=2} #
+legend = true
+writedata = false
+mintime = 1940-01-01
+
+[hobout.simgwlevel]
+source = 'Output_HOB.out'
+exttable = {tseries='obsgwlevel_pst'}
+idcol = 'wellname'
+plotargs = {Observed={linewidth=1, color='black', zorder=2},Simulated={linewidth=1, color='red', zorder=3}}
+location = {csv='obswells'}
+legend = true
+writedata = true
+
+[stat.headerr]
+data = {hobout='simgwlevel'}
+xcol = 'Observed'
+exttable = {csv='obswells'}

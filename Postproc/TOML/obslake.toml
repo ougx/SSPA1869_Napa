@@ -1,0 +1,12 @@
+[shp.lakes]
+source = 'Postproc\Data\shp_lake.zip'
+idcol = 'Lake'
+plotarg = {color='lightblue', alpha=0.7, zorder=51, legend=false}
+plotarg_loc = {facecolor='lightblue', edgecolor='r', alpha=1, zorder=52, linewidth=1.0}
+
+[tseries.obslakestage]
+source = 'Postproc\Data\20250415_obslake.csv'
+idcol = 'Lake'
+valcol = 'Observed'
+plotarg = {linewidth=0.5, marker='.', color='black', zorder=2}
+

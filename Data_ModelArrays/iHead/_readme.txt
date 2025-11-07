@@ -1,0 +1,1 @@
+extend the initial head in the expanded area, the new head is (0.9 * thick1 + botm1)

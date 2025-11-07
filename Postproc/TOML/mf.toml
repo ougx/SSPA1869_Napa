@@ -1,0 +1,9 @@
+[mf.MODFLOW] #specify location of mf6 files, add grid info
+version = 'mfnwt'
+namefile = 'NVIHM.nam'
+model_ws = '.'
+xmin = 6453400
+ymin = 1769800
+rotation = 20
+epsg = 2226
+#writeshp = true #writes a SHP for model grid

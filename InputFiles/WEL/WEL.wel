@@ -1,0 +1,538 @@
+# Napa Valley Integrated Hydrologic Model
+# WEL File for Indoor Domestic Pumping
+PARAMETER  0   0            # Dataset 1  [PARAMETER NPWEL MXL]
+7614      50   NOPRINT      # Dataset 2a [MAXACTW IWELCB Option]
+7614      0                 # Stress Period   1 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_198404.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  10 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_198501.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  22 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_198601.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  34 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_198701.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  46 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_198801.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  58 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_198901.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  70 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199001.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  82 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199101.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period  94 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199201.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 106 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199301.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 118 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199401.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 130 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199501.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 142 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199601.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 154 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199701.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 166 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199801.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 178 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_199901.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 190 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200001.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 202 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200101.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 214 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200201.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 226 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200301.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 238 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200401.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 250 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200501.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 262 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200601.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 274 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200701.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 286 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200801.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 298 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_200901.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 310 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201001.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 322 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201101.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 334 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201201.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 346 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201301.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 358 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201401.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 370 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201501.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 382 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201601.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 394 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201701.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 406 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201801.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 418 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201901.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 427 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_201910.wel
+-1
+-1
+7614      0                 # Stress Period 430 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202001.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 439 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202010.wel
+-1
+-1
+7614      0                 # Stress Period 442 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202101.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 451 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202110.wel
+-1
+-1
+7614      0                 # Stress Period 454 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202201.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 463 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202210.wel
+-1
+-1
+7614      0                 # Stress Period 466 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202301.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 475 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202310.wel
+-1
+-1
+7614      0                 # Stress Period 478 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202401.wel
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7614      0                 # Stress Period 487 [ITMP NP]
+OPEN/CLOSE InputFiles/WEL/WEL_202410.wel

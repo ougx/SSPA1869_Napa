@@ -1,0 +1,20 @@
+   10     1000000      500        .001         2        1       0    MODERATE
+   1       100000      500        .001         2        1       0    MODERATE
+   1       100000      500        .001         2        1       0    MODERATE
+   1       100000      500        .001         2        1       0    MODERATE
+   1       100000      500        .001         2        1       0    MODERATE
+   1       100000      500        .001         2        1       0    MODERATE
+   1       100000      500        .001         2        1       0    MODERATE
+  0.5       50000      500        .001         2        1       0    MODERATE
+  0.5       50000      500        .001         2        1       0    MODERATE
+  0.5       50000      500        .001         2        1       0    MODERATE
+  0.5       50000      500        .001         2        1       0    MODERATE
+  0.5       50000      500        .001         2        1       0    MODERATE
+  0.5       10000      500        .001         2        1       0    MODERATE
+# HEADTOL  FLUXTOL   MAXITEROUT  THICKFACT  LINMETH  IPRNWT  IBOTAV   OPTIONS     
+
+
+# LRG_660
+     1.e-2  1.0e15       400   0.000001         2         2         0  SPECIFIED    0.0 0.0 0.05 0.0001  1 5 1.5 0.1 #! HEADTOL FLUXTOL MAXITEROUT THICKFACT LINMETH IPRNWT IBOTAV OPTIONS [DBDTHETA] [DBDKAPPA] [DBDGAMMA] [MOMFACT] [BACKFLAG] [MAXBACKITER] [BACKTOL] [BACKREDUCE]
+ 1   1  1  5  1   1.0e-03 0 0.0e-15 4.e-3 20                   #ITEM 2b. [IACL][NORDER][LEVEL][NORTH][IREDSYS][RRCTOLS][IDROPTOL][EPSRN] [HCLOSEXMD][MXITERXMD]
+

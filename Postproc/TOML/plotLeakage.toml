@@ -1,0 +1,30 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\basemap2.toml',
+           'Postproc\TOML\simleakage.toml',
+]
+
+[shp.stream1]
+source = 'Postproc\Data\shp_sfr.zip'
+dissolve = 'LeakName'
+idcol = "LeakName"
+plotarg = {color='b', linewidth=0.8, alpha=0.7, zorder=50, label='SFR Network', legend=true}
+
+
+[tsplot.plotLeakage]
+figsize = [8, 6]
+mapplot = 'basemap2'
+plotdata = {tseries = ['simleakage']}
+exttable = {shp='stream1'}
+grouping = 'gnis_name'
+xlabel = 'Year'
+ylabel = 'Baseflow (af)'
+text = [
+    {x=0.97, y=0.98, text="{gnis_name}", va='top', ha='right'},
+    {x=0.97, y=0.93, text="*SW-centric sign convention: Positive flux is SW gains", va='top', ha='right', fontsize =8},
+]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[pdf.plotLekage]
+dpi = 200
+pages={tsplot = ['plotLeakage']}
+

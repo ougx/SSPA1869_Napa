@@ -1,0 +1,21 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\basemap2.toml',
+           'Postproc\TOML\obslake.toml',
+           'Postproc\TOML\simlake.toml',
+]
+
+[tsplot.plotLakeStage]
+mapplot = 'basemap2_nolake'
+figsize = [8, 6]
+plotdata = {tseries = ['obslakestage', 'simlakestage']}
+xlabel = 'Year'
+ylabel = 'Lake stage (feet)'
+text = [
+    {x=0.97, y=0.97, text='{Lake}', va='top', ha='right'},
+]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[pdf.plotLakeStage]
+dpi = 200
+pages={tsplot = ['plotLakeStage']}
+

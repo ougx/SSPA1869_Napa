@@ -1,0 +1,9 @@
+include = ['Postproc\TOML\basemap.toml',
+]
+
+[tseries.simleakage]
+source = 'leakage_ann.csv'
+stack = ['LeakName', 'Baseflow']
+plotarg = {linewidth=1, marker='.', color='red', zorder=2} #
+location = {shp='streams'}
+mintime = 1940-01-01

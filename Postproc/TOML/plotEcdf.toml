@@ -1,0 +1,40 @@
+include = ['Postproc\TOML\simhead.toml', 'Postproc\TOML\simflow.toml', 'Postproc\TOML\obsflow.toml']
+
+[edfplot.gwlevel]
+figsize = [8, 4]
+plotdata = [{hobout='simgwlevel'}]
+legend=true
+xlabel = 'Cumulative probability (%)'
+ylabel = 'Groundwater elevation (feet)'
+stats = true
+plotarg_stat = {fontsize=10}
+text = [{x=-0.10, y=-0.1, text=" ", alpha=0.5}, ]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[edfplot.streamflow]
+figsize = [8, 4]
+plotdata = [{tseries='simflow'}, {tseries='obsflow'}, ]
+legend=true
+xlabel = 'Cumulative probability (%)'
+ylabel = 'Streamflow (cfs)'
+stats = true
+plotarg_stat = {x=0.5, y=0.2, fontsize=10}
+text = [{x=-0.10, y=-0.1, text=" ", alpha=0.5}, ]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[edfplot.streamflow_log]
+figsize = [8, 4]
+plotdata = [{tseries='simflow'}, {tseries='obsflow'}, ]
+legend=true
+xlabel = 'Cumulative probability (%)'
+ylabel = 'Streamflow (cfs)'
+yscale = "log"
+ylim = [1e-2, 1e4]
+stats = true
+plotarg_stat = {fontsize=10}
+text = [{x=-0.10, y=-0.1, text=" ", alpha=0.5}, ]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+
+[pdf.plotEcdf]
+pages = {edfplot=["gwlevel", "streamflow", "streamflow_log"]}

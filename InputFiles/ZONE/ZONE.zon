@@ -1,0 +1,23 @@
+# Napa Valley Integrated Hydrologic Model (NVIHM)
+# MODFLOW Zone File
+10                                                                          # NZN - Number of Zones 
+Lay1Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay1Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 1
+Lay2Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay2Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 2
+Lay3Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay3Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 3
+Lay4Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay4Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 4
+Lay5Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay5Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 5
+Lay6Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay6Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 6
+Lay7Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay7Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 7
+Lay8Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay8Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 8
+Lay9Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay9Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 9
+Lay10Zone                                                                    # ZONNAM - Zone Name
+OPEN/CLOSE   .\Data_ModelArrays\ZoneArrays\Lay10Zones.txt  1 (FREE)  -1    # IZON - Zone Array Layer 10

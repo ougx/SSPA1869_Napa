@@ -1,0 +1,38 @@
+[csv.obswells] #specify csv containing xy data for mapping
+source = 'Postproc\Data\obswell_full.csv'
+idcol = 'wellname'
+filter = "active == 1"
+plotarg     = {markersize=10, color='k', alpha=1, zorder=60}
+plotarg_loc = {markersize=25, facecolor='k', edgecolor='r', alpha=1, zorder=61, linewidth=1.2}
+
+
+[tseries.obsgwlevel] #SPECIFY CSV WITH COMPILED WELL OBSERVATION DATA
+source = 'Postproc\Data\obsgwl.csv'
+idcol = 'wellname'
+valcol = 'obsgwl'
+plotarg = {linewidth=0.5, marker='.', color='black', zorder=2}
+location = {csv='obswells'}
+#mintime = 1940-01-01
+legend = true
+
+[tseries.obsgwlevel_pst]
+parent = 'obsgwlevel'
+valcol = 'obsname'
+
+[tseries.obsgwleveldiff_pst]
+source = 'Postproc\Data\20250508_obsheaddiff.csv'
+idcol = 'MF6Name'
+valcol = 'obsname'
+plotarg = {linewidth=0.5, marker='.', color='black', zorder=2}
+location = {csv='obswells'}
+mintime = 1940-01-01
+legend = true
+
+[tseries.obsgwlevelmon] #SPECIFY CSV WITH COMPILED WELL OBSERVATION DATA
+source = 'Postproc\Data\20250529_SSPA_GWData_MonthlyAverage.csv'
+idcol = 'MF6Name'
+valcol = 'Observed'
+plotarg = {linewidth=0.5, color='black', zorder=2}
+location = {csv='obswells'}
+mintime = 1940-01-01
+legend = true

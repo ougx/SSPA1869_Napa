@@ -1,0 +1,46 @@
+# Napa Valley Integrated Hydrologic Model (NVIHM)
+# MODFLOW Parameter Value (PVAL) Package
+38          PROPRINT        # Number of Parameter Values and Option to Print Property Arrays
+HK_QPC      1.0000000       # Scale Factor for Qa HK in Layers 1-6
+HK_QSB      2.0240732       # HK for Alluvium in Layer 9
+HK_VOL      .33915150       # HK for Volcanics
+HK_MST      .10798900       # HK for Volcanics
+HK_SND      .44078573       # HK for Volcanics
+VK_QPC      1.0000000       # Scale Factor for Alluvium VK in Layers 1-8
+VK_QSB      .05000000       # VK for Alluvium in Layer 9
+VK_VOL      .05000000       # VK for Volcanics
+VK_MST      .00800000       # VK for Volcanics
+VK_SND      .05000000       # VK for Volcanics
+SS_QPC      1.0000000       # Scale Factor for Alluvium Ss in Layers 1-8
+SS_QSB      1.0000E-5       # SS for Alluvium in Layer 9
+SS_VOL      1.0000E-6       # SS for Volcanics
+SS_MST      1.0000E-6       # SS for Volcanics
+SS_SND      1.0000E-6       # SS for Volcanics
+SY_QPC      1.0000000       # Scale Factor for Alluvium Sy in Layers 1-8
+SY_QSB      .03319400       # Sy for Alluvium in Layer 9
+SY_VOL      .01552100       # Sy for Volcanics
+SY_MST      .03422400       # Sy for Volcanics
+SY_SND      .02000000       # Sy for Volcanics
+DCONB1      500.00000       # Black Grape Drains
+DCONB2      500.00000       # Black Grape Drains
+DCONB3      500.00000       # Black Grape Drains
+DCONB4      500.00000       # Black Grape Drains
+DCONB5      500.00000       # Black Grape Drains
+DCONB6      500.00000       # Black Grape Drains
+DCONW1      500.00000       # White Grape Drains
+DCONW2      500.00000       # White Grape Drains
+DCONW3      500.00000       # White Grape Drains
+DCONW4      500.00000       # White Grape Drains
+DCONW5      500.00000       # White Grape Drains
+DCONW6      500.00000       # White Grape Drains
+E_NAPA      5.0000E-6       # East Napa Fault K
+MILLVAL     1.0000E-5       # Mill Valley Fault K
+SMST        5.0000E-6       # Napa Valley South of Napa Fault K
+SODACRK     5.0000E-6       # Soda Creek Fault K
+WNAPA_1     0.0100000       # West Napa Fault South K
+WNAPA_2     0.0100000       # West Napa Fault North K
+GHBTIDAL    .50000000       # Conductance Multiplier for GHB
+GHBBAY      .50000000       # Conductance Multiplier for GHB
+ 
+ 
+ 

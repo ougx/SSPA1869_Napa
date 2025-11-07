@@ -1,0 +1,46 @@
+[mapplot.basemap]
+figsize = [7, 10]
+epsg = 2226
+extent = [6374790,6505000,1868000,2007101] # [xmin, xmax, ymin, ymax]
+plotdata = {northarrow='north', scalebar='miles', shp=['modeldomain','streams', 'lakes']} # , img='grey'
+legendarg = {loc='upper right', zorder=100}
+
+[mapplot.basemap_inset]
+parent = 'basemap'
+plotdata = {northarrow='north2', scalebar='miles', shp=['modeldomain','streams', 'lakes']} # , img='grey'
+bounds = [1.01, 0.0, 0.4, 1.0]
+
+[northarrow.north]
+xy = [6480038,1999979]
+
+[northarrow.north2]
+xy = [6480038,1990979]
+
+[img.grey]
+source = 'Postproc\Data\bm.jpg'
+extent = [6374790,6490038,1885463,2007101] # [xmin, xmax, ymin, ymax]
+alpha = 0.5
+
+[shp.modeldomain]
+source = 'Postproc\Data\shp_domain.zip'
+plotarg = {edgecolor='k', facecolor='none', zorder=25, linewidth=0.5, label='Model Outline', legend=true}
+
+[shp.streams]
+source = 'Postproc\Data\shp_stream.zip'
+filter = 'visibility > 24000'
+plotarg = {color='b', linewidth=0.8, alpha=0.7, zorder=50, label='SFR Network', legend=true}
+
+[shp.lakes]
+source = 'Postproc\Data\shp_lake.zip'
+plotarg = {color='lightblue', alpha=1, zorder=51, legend=false}
+plotarg_loc = {facecolor='lightblue', edgecolor='r', alpha=1, zorder=52, linewidth=1.0}
+
+[scalebar.miles]
+xy = [6410000,1872829]
+length = 20
+unit='miles'
+unit_factor=1609
+
+[ppdf.plotBasemap]
+dpi = 150
+pages = [{mapplot=['basemap']}]

@@ -1,0 +1,38 @@
+# Napa Valley Integrated Hydrologic Model (NVIHM) Version 1 (9/4/2020)
+# MODFLOW One-Water Version 2b
+
+###### OUTPUT FILES  ######
+LIST                  9  Output.lst
+DATA(BINARY)         46  Output_HEAD.hed                  REPLACE
+DATA(BINARY)         50  Output_BUDGET.bgt                REPLACE
+DATA(BINARY)         70  Output_HYD.sav                   REPLACE
+DATA                 68  Output_HOB_Timestep.out          REPLACE
+DATA                 69  Output_HOB.out                   REPLACE
+DATA                 81  Output_SFR.out                   REPLACE
+DATA                100  Output_MNW_QSUM_Out.txt          REPLACE
+DATA                101  Output_MNW_BYND_Out.txt          REPLACE
+
+###### GLOBAL FILES ######
+DIS                   8  ./InputFiles/DIS/DIS.dis   
+ZONE                 83  ./InputFiles/ZONE/ZONE.zon 
+MULT                 84  ./InputFiles/MULT/MULT.mult
+
+###### INPUT FILES ######
+BAS6                 10  ./InputFiles/BAS/BAS.bas 		# Basic package (options, ibound, starting heads)     
+NWT                  11  ./InputFiles/NWT/NWT_Fast.nwt		# Newton package (solver)
+
+RCH                  12  ./InputFiles/RCH/RCH.rch 		# net recharge
+UPW                  13  ./InputFiles/UPW/UPW.upw		# Upstream weighting package (layer properties)
+SFR                  14  ./InputFiles/SFR/SFR.sfr		# Streamflow routing package
+MNW2                 15  ./InputFiles/MNW2/MNW2.mnw	        # Multi-node well package (fluxes called from feed files)
+MNWI                 21  ./InputFiles/MNW2/MNWI.mnwi		# Multi-node well information package             
+GHB                  16  ./InputFiles/GHB/GHB.ghb  		# General head boundary package (exchange with bay and tidal flats)               
+DRT                  25  ./InputFiles/DRT/DRT.drt		# Drain package (ag drains)
+WEL                  17  ./InputFiles/WEL/WEL.wel   		# Indoor Domestic Pumping File  and Mountain Block Recharge (Specified Flux specified in feed files)
+
+OC                   20  ./InputFiles/OC/OC.oc			# Output control                    
+HYD                  22  ./InputFiles/HYD/HYD.hyd		# HYD Package (observations - streams)
+HOB                  23  ./InputFiles/HOB/HOB_Head.hob		# Head observation package (OBS process)
+PVAL                 24  ./InputFiles/PVAL/PVAL.pvl             # Parameter value package (values passed to other packages eg. UPW, GHB, DRT, HFB)
+HFB6                 26  ./InputFiles/HFB/HFB.hfb		# Hydraulic flow barrier package (faults)
+

@@ -1,0 +1,6 @@
+[tseries.simseepage]
+source = 'PecosLeakge_mon.csv'
+valcol = 'Pecos_toArtesia'
+idcol = 'Name'
+plotarg = {linewidth=0.5, color='red', zorder=2} # , marker='.'
+mintime = 1940-01-01

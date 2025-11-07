@@ -1,0 +1,10 @@
+include = ['Postproc\TOML\basemap.toml']
+
+[mapplot.basemap2]
+parent = 'basemap'
+plotdata = {northarrow='north', scalebar='3mile', shp=['modeldomain3','streams', 'lakes']} #, img='grey'
+bounds = [1.0, 0.0, 0.4, 1.0]
+
+[mapplot.basemap2_nolake]
+parent = 'basemap'
+bounds = [1.0, 0.0, 0.4, 1.0]

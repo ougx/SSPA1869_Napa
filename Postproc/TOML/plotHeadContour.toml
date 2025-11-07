@@ -1,0 +1,47 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\mf.toml',
+           'Postproc\TOML\basemap.toml',
+]
+
+[mfbin.HeadMF1]
+source = 'Output.hds'
+model = {mf = 'Pecos'}
+plottype = 'contour'
+limits = [0,10000]
+dlevel = 20
+plotarg = {colors='k', linewidths=0.5}
+minlayer = 1
+maxlayer = 1
+mintime = 2023-01-01
+maxtime = 2024-01-01
+#colorbar = {shrink=0.6, pad=0.01, label='Groundwater Elevation (feet)'}
+writedata = false
+#writeshp = true
+
+[mfbin.HeadMF3]
+parent = 'HeadMF1'
+minlayer = 3
+maxlayer = 3
+
+[mapplot.'Layer 1']
+parent = 'basemapl1'
+plotdata2 = {mfbin = 'HeadMF1'}
+text = [{x=0.5, y=1.015,  text='Simulated Head: Layer {layer}; Month: {time.strftime("%Y-%m")}', ha='center'},
+        {x = -0.0, y = -0.02, text = " "}]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+makemovie = false
+makepng   = false
+showborder = true
+
+[mapplot.'Layer 3']
+parent = 'basemap'
+plotdata2 = {mfbin = 'HeadMF3'}
+text = [{x=0.5, y=1.015,  text='Simulated Head: Layer {layer}; Month: {time.strftime("%Y-%m")}', ha='center'},
+        {x = -0.0, y = -0.02, text = " "}]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+makemovie = false
+makepng   = false
+showborder = true
+
+[pdf.plotHeadContours]
+pages = {mapplot=['Layer 1', 'Layer 3']}

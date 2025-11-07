@@ -1,0 +1,10 @@
+.bat    
+.exe    
+.txt    
+.vscode 
+.git    
+autotest
+docs    
+.spyproject 
+__pycache__ 
+00_build_template 

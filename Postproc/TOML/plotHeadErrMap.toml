@@ -1,0 +1,69 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\basemap.toml',
+]
+
+[mapplot.AllLayers]
+parent = 'basemap'
+# text = {x=0.05,y=0.95,text="All Layers",va="top",ha="left",fontsize="large"}
+plotdata2 = {csv='meanerr'}
+
+[csv.meanerr]
+source = 'headerr.csv'
+idcol = 'wellname'
+size  = 'rmse'
+sizescale = 10
+plotarg     = {column='merr', edgecolor='k', vmin=-60, vmax=60, cmap='RdBu,12', legend=true, legend_kwds={shrink=2.0, fraction=0.03, pad=0.01, label='Mean residual (feet)'}, zorder=60}
+
+[csv.meanerr1]
+parent = "meanerr"
+filter = "layer == 1"
+
+[mapplot.Layer1]
+parent = 'basemapl1'
+text = {x=0.05,y=0.95,text="Layer 1",va="top",ha="left",fontsize="large"}
+plotdata2 = {csv='meanerr1'}
+
+[csv.meanerr3]
+parent = "meanerr"
+filter = "layer == 3"
+
+[mapplot.Layer3]
+parent = 'AllLayers'
+text = {x=0.05,y=0.95,text="Layer 3",va="top",ha="left",fontsize="large"}
+plotdata2 = {csv='meanerr3'}
+
+[pdf.plotHeadErrMap]
+pages = {mapplot=['AllLayers']}
+
+
+[csv.meanerrD]
+parent = 'meanerr'
+source = 'differr.csv'
+sizescale = 10
+
+[mapplot.AllLayersD]
+parent = 'basemap'
+text = {x=0.05,y=0.95,text="All Layers",va="top",ha="left",fontsize="large"}
+plotdata2 = {csv='meanerrD'}
+
+
+[csv.meanerrD1]
+parent = "meanerrD"
+filter = "layer == 1"
+
+[mapplot.LayerD1]
+parent = 'basemapl1'
+text = {x=0.05,y=0.95,text="Layer 1",va="top",ha="left",fontsize="large"}
+plotdata2 = {csv='meanerrD1'}
+
+[csv.meanerrD3]
+parent = "meanerrD"
+filter = "layer == 3"
+
+[mapplot.LayerD3]
+parent = 'AllLayers'
+text = {x=0.05,y=0.95,text="Layer 3",va="top",ha="left",fontsize="large"}
+plotdata2 = {csv='meanerrD3'}
+
+[ppdf.plotDiffErrMap]
+pages = {mapplot=['AllLayersD', 'LayerD1', 'LayerD3']}

@@ -1,0 +1,25 @@
+include = ['Postproc\TOML\obsflow.toml', 'Postproc\TOML\global.toml']
+
+[tseries.simflow]
+source = 'Output_gage.csv'
+idcol = "MFName"
+valcol = ['OUTFLOW']
+plotarg = {linewidth=1.0, color='red', zorder=2} # , marker='.'
+location = {csv='streamgage'}
+a_scale = 1.1574074074074073e-05    # 1 / 86400
+legend = true
+rename = {columns={OUTFLOW='Simulated'}}
+resample = {rule='ME',func='mean'}
+
+
+[tseries.simflow_vol]
+source = 'Output_gage.csv'
+idcol = "MFName"
+valcol = ['OUTFLOW']
+plotarg = {linewidth=1.0, color='red', zorder=2} # , marker='.'
+location = {csv='streamgage'}
+legend = true
+rename = {columns={OUTFLOW='Simulated'}}
+resample = {rule='ME',func='mean'}
+rate_to_cumvol = true
+a_scale = 2.295684113865932e-05   # 1 cf to AF/month

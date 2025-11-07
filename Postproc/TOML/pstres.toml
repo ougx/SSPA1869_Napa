@@ -1,0 +1,51 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\obshead.toml',
+           'Postproc\TOML\obsflow.toml',
+]
+
+[pstres.annual_head]
+source = '../PEST/rgw01.res'
+exttable = {tseries='obsgwlevel_pst'}
+location = {csv='obswells'}
+idcol = 'MF6Name'
+filter = 'pestObsWeight > 0.0'
+legend = true
+
+[pstres.seasonal_head]
+source = '../PEST/rgw01.res'
+exttable = {tseries='obsgwleveldiff_pst'}
+location = {csv='obswells'}
+idcol = 'MF6Name'
+filter = 'pestObsWeight > 0.0'
+rename = {columns={seasonal_head='Simulated'}}
+plotargs = {Observed={linewidth=1, color='black', zorder=2},Simulated={linewidth=1, color='red', zorder=3}}
+legend = true
+
+
+[pstres.flow]
+source = '../PEST/rgw01.res'
+exttable = {tseries='obsflow_pst'}
+idcol = 'MF6Name'
+filter = 'pestObsWeight > 0.0'
+legend = true
+
+
+[pstres.prleak]
+source = '../PEST/rgw01.res'
+exttable = {tseries='obsprleak_pst'}
+idcol = 'MF6Name'
+filter = 'pestObsWeight > 0.0'
+plotargs = {Observed={linewidth=1, color='black', zorder=2},Simulated={linewidth=1, color='red', zorder=3}}
+legend = true
+
+
+[stat.headerr]
+data = {pstres='annual_head'}
+xcol = 'Observed'
+exttable = {csv='obswells'}
+
+
+[stat.differr]
+data = {pstres='seasonal_head'}
+xcol = 'Observed'
+exttable = {csv='obswells'}

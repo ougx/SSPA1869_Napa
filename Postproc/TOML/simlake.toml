@@ -1,0 +1,10 @@
+
+
+[tseries.simlakestage]
+source = 'Output_lak_stage.csv'
+stack = ['Lake', 'Simulated']
+plotarg = {linewidth=0.5, color='red', zorder=2} #
+mintime = 1990-10-01
+resample = {rule='MS',func='mean'}
+location = {shp='lakes'}
+

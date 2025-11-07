@@ -1,0 +1,259 @@
+# Napa Valley Integrated Hydrologic Model (NVIHM)
+# MODFLOW Upstream Weighting (UPW) Package
+#  Zones:
+#    Zone 1:  Qa in Layers 1 through 6
+#    Zone 2:  Qsb in Layer  1 through 10
+#    Zone 3:  Volcanic and Undifferentiated Zone 3
+#    Zone 4:  Volcanic and Undifferentiated MST Caldera
+#    Zone 5:  Volcanic and Undifferentiated Huichica & Sandstone
+#
+ 50   -1.00E+30   20   0        # 1: IUPWCBC HDRY NPUPW IPHDRY
+1  1  1  1  1  1  1  1  1  1    # 2: LAYTYP
+0  0  0  0  0  0  0  0  0  0    # 3: LAYAVG
+1  1  1  1  1  1  1  1  1  1    # 4: CHANI
+0  0  0  0  0  0  0  0  0  0    # 5: LAYVKA
+0  0  0  0  0  0  0  0  0  0    # 6: LAYWET
+HK_QPC   HK  1.00    6          # 7: PARNAM PARTYP PARVAL NCLU (HK Qa in Layers 1 through 6)
+  1  HK_LAY1  Lay1Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  2  HK_LAY2  Lay2Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  3  HK_LAY3  Lay3Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  4  HK_LAY4  Lay4Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  5  HK_LAY5  Lay5Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  6  HK_LAY6  Lay6Zone   1      # 8: LAYER MLTARR ZONARR IZ
+HK_QSB   HK  1.00   10          # 7: PARNAM PARTYP PARVAL NCLU (HK Qsb in Layers 1 through 10)
+  1  NONE     Lay1Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   2      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   2      # 8: LAYER MLTARR ZONARR IZ
+HK_VOL  HK    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (HK Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   3      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   3      # 8: LAYER MLTARR ZONARR IZ
+HK_MST  HK    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (HK MST Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   4      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   4      # 8: LAYER MLTARR ZONARR IZ
+HK_SND  HK    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (HK Sandstone for Layers 1 through 10)
+  1  NONE     Lay1Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   5      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   5      # 8: LAYER MLTARR ZONARR IZ
+VK_QPC  VK  1.00    6           # 7: PARNAM PARTYP PARVAL NCLU (VK Alluvium in Layers 1 through 6)
+  1  VK_LAY1  Lay1Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  2  VK_LAY2  Lay2Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  3  VK_LAY3  Lay3Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  4  VK_LAY4  Lay4Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  5  VK_LAY5  Lay5Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  6  VK_LAY6  Lay6Zone   1      # 8: LAYER MLTARR ZONARR IZ
+VK_QSB   VK  1.00   10          # 7: PARNAM PARTYP PARVAL NCLU (VK Qsb in Layers 1 through 10)
+  1  NONE     Lay1Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   2      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   2      # 8: LAYER MLTARR ZONARR IZ
+VK_VOL  VK    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (VK Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   3      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   3      # 8: LAYER MLTARR ZONARR IZ
+VK_MST  VK    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (VK MST Volcannics for Layers 1 through 10)
+  1  NONE     Lay1Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   4      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   4      # 8: LAYER MLTARR ZONARR IZ
+VK_SND  VK    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (VK Sandstone for Layers 1 through 10)
+  1  NONE     Lay1Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   5      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   5      # 8: LAYER MLTARR ZONARR IZ
+SS_QPC  SS  1.00   6            # 7: PARNAM PARTYP PARVAL NCLU (SS Qa in Layers 1 through 6)
+  1  SS_LAY1  Lay1Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  2  SS_LAY2  Lay2Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  3  SS_LAY3  Lay3Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  4  SS_LAY4  Lay4Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  5  SS_LAY5  Lay5Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  6  SS_LAY6  Lay6Zone   1      # 8: LAYER MLTARR ZONARR IZ
+SS_QSB   SS  1.00   10          # 7: PARNAM PARTYP PARVAL NCLU (SS Qsb in Layers 1 through 10)
+  1  NONE     Lay1Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   2      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   2      # 8: LAYER MLTARR ZONARR IZ
+SS_VOL  SS    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (SS Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   3      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   3      # 8: LAYER MLTARR ZONARR IZ
+SS_MST  SS    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (SS MST Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   4      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   4      # 8: LAYER MLTARR ZONARR IZ
+SS_SND  SS    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (SS Sandstone for Layers 1 through 10)
+  1  NONE     Lay1Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   5      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   5      # 8: LAYER MLTARR ZONARR IZ
+SY_QPC  SY  1.00   6            # 7: PARNAM PARTYP PARVAL NCLU (SY Qa in Layers 1 through 6)
+  1  SY_LAY1  Lay1Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  2  SY_LAY2  Lay2Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  3  SY_LAY3  Lay3Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  4  SY_LAY4  Lay4Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  5  SY_LAY5  Lay5Zone   1      # 8: LAYER MLTARR ZONARR IZ
+  6  SY_LAY6  Lay6Zone   1      # 8: LAYER MLTARR ZONARR IZ
+SY_QSB   SY  1.00   10          # 7: PARNAM PARTYP PARVAL NCLU (SY Qsb in Layers 1 through 10)
+  1  NONE     Lay1Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   2      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   2      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   2      # 8: LAYER MLTARR ZONARR IZ
+SY_VOL  SY    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (SY Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   3      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   3      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   3      # 8: LAYER MLTARR ZONARR IZ
+SY_MST  SY    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (SY MST Volcanics for Layers 1 through 10)
+  1  NONE     Lay1Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   4      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   4      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   4      # 8: LAYER MLTARR ZONARR IZ
+SY_SND  SY    0.5   10          # 7: PARNAM PARTYP PARVAL NCLU (SY Sandstone for Layers 1 through 10)
+  1  NONE     Lay1Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  2  NONE     Lay2Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  3  NONE     Lay3Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  4  NONE     Lay4Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  5  NONE     Lay5Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  6  NONE     Lay6Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  7  NONE     Lay7Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  8  NONE     Lay8Zone   5      # 8: LAYER MLTARR ZONARR IZ
+  9  NONE     Lay9Zone   5      # 8: LAYER MLTARR ZONARR IZ
+ 10  NONE    Lay10Zone   5      # 8: LAYER MLTARR ZONARR IZ
+-1 HK Layer  1
+-1 VK Layer  1
+-1 SS Layer  1
+-1 SY Layer  1
+-1 HK Layer  2
+-1 VK Layer  2
+-1 SS Layer  2
+-1 SY Layer  2
+-1 HK Layer  3
+-1 VK Layer  3
+-1 SS Layer  3
+-1 SY Layer  3
+-1 HK Layer  4
+-1 VK Layer  4
+-1 SS Layer  4
+-1 SY Layer  4
+-1 HK Layer  5
+-1 VK Layer  5
+-1 SS Layer  5
+-1 SY Layer  5
+-1 HK Layer  6
+-1 VK Layer  6
+-1 SS Layer  6
+-1 SY Layer  6
+-1 HK Layer  7
+-1 VK Layer  7
+-1 SS Layer  7
+-1 SY Layer  7
+-1 HK Layer  8
+-1 VK Layer  8
+-1 SS Layer  8
+-1 SY Layer  8
+-1 HK Layer  9
+-1 VK Layer  9
+-1 SS Layer  9
+-1 SY Layer  9
+-1 HK Layer  10
+-1 VK Layer  10
+-1 SS Layer  10
+-1 SY Layer  10

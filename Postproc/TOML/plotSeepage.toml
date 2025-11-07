@@ -1,0 +1,23 @@
+include = ['Postproc\TOML\global.toml',
+           'Postproc\TOML\obsseepage.toml',
+           'Postproc\TOML\simseepage.toml',
+]
+
+[tsplot.plotSeepage]
+figsize = [8, 6]
+plotdata = {tseries = ['obsseepage', 'simseepage']}
+#plotdata = {tseries = ['obsseepage']}
+xlabel = 'Year'
+ylabel = 'SW Seepage (af)'
+text = [
+    {x=0.97, y=0.97, text="Pecos (Acme to Artesia)", va='top', ha='right', fontsize =10},
+]
+text2 = [
+    {x=0.97, y=0.93, text="*SW-centric sign convention: Positive flux is SW gains\n**Pre-1989 stress periods are seasonal, post-1989 stress periods are monthly", va='top', ha='right', fontsize =8},
+]
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
+
+[pdf.plotSeepage_mon]
+dpi = 200
+pages={tsplot = ['plotSeepage']}
+

@@ -1,0 +1,6 @@
+[tseries.obsseepage] #SPECIFY CSV WITH COMPILED OBSERVATION DATA
+source = 'Postproc\Data\20250509_obsseepage.csv'
+idcol = 'Name'
+valcol = 'Observed'
+plotarg = {linewidth=0.5, color='black', zorder=2}
+mintime = 1940-01-01

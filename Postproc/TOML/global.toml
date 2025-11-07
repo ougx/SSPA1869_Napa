@@ -1,0 +1,4 @@
+start_date = 1983-03-31T11:59:59
+time_unit = 'day'
+epsg = 2226
+err_as_oms = true

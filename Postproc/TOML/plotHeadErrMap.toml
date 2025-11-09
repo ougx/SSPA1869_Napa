@@ -6,6 +6,7 @@ include = ['Postproc\TOML\global.toml',
 parent = 'basemap'
 # text = {x=0.05,y=0.95,text="All Layers",va="top",ha="left",fontsize="large"}
 plotdata2 = {csv='meanerr'}
+logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
 
 [csv.meanerr]
 source = 'headerr.csv'

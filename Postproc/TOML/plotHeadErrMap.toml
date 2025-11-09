@@ -13,7 +13,7 @@ source = 'headerr.csv'
 idcol = 'wellname'
 size  = 'rmse'
 sizescale = 10
-plotarg     = {column='merr', edgecolor='k', vmin=-60, vmax=60, cmap='RdBu,12', legend=true, legend_kwds={shrink=2.0, fraction=0.03, pad=0.01, label='Mean residual (feet)'}, zorder=60}
+plotarg     = {column='merr', edgecolor='k', vmin=-60, vmax=60, cmap='RdBu_r,12', legend=true, legend_kwds={shrink=2.0, fraction=0.03, pad=0.01, label='Mean residual (feet)'}, zorder=60}
 
 [pdf.plotHeadErrMap]
 pages = {mapplot=['AllLayers']}

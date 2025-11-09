@@ -34,10 +34,10 @@ ax_set_kwargs = [
     'adjustable', 'agg_filter', 'alpha', 'anchor', 'animated', 'aspect', 'autoscale_on', 'autoscalex_on', 'autoscaley_on',
     'axes_locator', 'axisbelow', 'box_aspect', 'clip_box', 'clip_on', 'clip_path', 'facecolor', 'frame_on', 'gid',
     'in_layout', 'label', 'mouseover', 'navigate', 'path_effects', 'picker', 'position', 'prop_cycle', 'rasterization_zorder',
-    'rasterized', 'sketch_params', 'snap', 'subplotspec', 'title', 'transform', 'url', 'visible',
+    'rasterized', 'sketch_params', 'snap', 'subplotspec', 'transform', 'url', 'visible',
     'xbound', 'xlabel', 'xlim', 'xmargin', 'xscale', 'xticklabels', 'xticks',
     'ybound', 'ylabel', 'ylim', 'ymargin', 'yscale', 'yticklabels', 'yticks',
-     'zorder'
+     'zorder' #, 'title'
 ]
 collection_prop = ['agg_filter','alpha','animated','antialiased',
     'capstyle','clim','clip_box','clip_on','clip_path',

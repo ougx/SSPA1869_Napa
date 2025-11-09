@@ -42,3 +42,6 @@ zz_Archive*
 06_Model/00-NMISC_Keyes_Roswell_Model_2013_COPY_HOB/zonbud/RGW_2013.2.csv
 06_Model/00-NMISC_Keyes_Roswell_Model_2013_COPY_HOB/zonbud/RGW_2013.csv
 /06_Model/01-SuperpositionModel
+headerr.csv
+tseries.*
+hobout.*

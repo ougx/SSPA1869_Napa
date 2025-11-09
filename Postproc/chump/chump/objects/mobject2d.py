@@ -46,10 +46,10 @@ class mobject2d(mobject):
         calculate the maximum values over the layers
         """
 
-        self.mintime: int | float | str| datetime  = self.dict.get('mintime', 0)
+        self.mintime: int | float | str| datetime  = self.dict.get('mintime', None)
         """Filter data with time larger than or euqal to `mintime`. """
 
-        self.maxtime: int | float | str| datetime  = self.dict.get('maxtime', 1e30)
+        self.maxtime: int | float | str| datetime  = self.dict.get('maxtime', None)
         """Filter data with time smaller than or euqal to `maxtime`. """
 
         self.tfunc: str  = self.dict.get('tfunc', None)
@@ -394,6 +394,8 @@ class mobject2d(mobject):
             else:
                 for kk in dir(datfunc):
                     if k.startswith(kk):
+                        if self.verbose >= 1:
+                            print(f'      {self.fullname} applying {k} ...')
                         getattr(datfunc, kk)(self, k)
                         assert self._dat.shape[0] > 0 and self._dat.shape[1] > 0, (
                         f'{self.fullname} data size reduces to zero after {k}.')

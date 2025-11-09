@@ -1,11 +1,13 @@
 include = ['Postproc\TOML\simhead.toml', 'Postproc\TOML\simflow.toml', 'Postproc\TOML\obsflow.toml']
 
+
 [edfplot.gwlevel]
 figsize = [8, 4]
 plotdata = [{hobout='simgwlevel'}]
 legend=true
 xlabel = 'Cumulative probability (%)'
 ylabel = 'Groundwater elevation (feet)'
+title = "Exccedence Plot of Groundwater Levels"
 stats = true
 plotarg_stat = {fontsize=10}
 text = [{x=-0.10, y=-0.1, text=" ", alpha=0.5}, ]
@@ -24,7 +26,7 @@ logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8
 
 [edfplot.streamflow_log]
 figsize = [8, 4]
-plotdata = [{tseries='simflow'}, {tseries='obsflow'}, ]
+plotdata = [{tseries='simflow_calib'}, {tseries='obsflow_calib'}, ]
 legend=true
 xlabel = 'Cumulative probability (%)'
 ylabel = 'Streamflow (cfs)'
@@ -35,6 +37,32 @@ plotarg_stat = {fontsize=10}
 text = [{x=-0.10, y=-0.1, text=" ", alpha=0.5}, ]
 logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
 
+[tseries.simflow_helena]
+parent = 'simflow_calib'
+filter = 'MFName == "NapaR_Helena"'
+
+[tseries.obsflow_helena]
+parent = 'obsflow_calib'
+filter = 'MFName == "NapaR_Helena"'
+
+[edfplot.streamflow_log_helena]
+title = "Exccedence Plot of Streamflow at Gage Helena (2017-10-01 to 2023-09-30)"
+parent = "streamflow_log"
+plotdata = [{tseries='simflow_helena'}, {tseries='obsflow_helena'}, ]
+
+[tseries.simflow_napa]
+parent = 'simflow_calib'
+filter = 'MFName == "NapaR_Napa"'
+
+[tseries.obsflow_napa]
+parent = 'obsflow_calib'
+filter = 'MFName == "NapaR_Napa"'
+
+[edfplot.streamflow_log_napa]
+title = "Exccedence Plot of Streamflow at Gage Napa (2017-10-01 to 2023-09-30)"
+parent = "streamflow_log"
+plotdata = [{tseries='simflow_napa'}, {tseries='obsflow_napa'}, ]
+
 
 [pdf.plotEcdf]
-pages = {edfplot=["gwlevel", "streamflow", "streamflow_log"]}
+pages = {edfplot=["gwlevel", "streamflow_log_helena", "streamflow_log_napa"]}

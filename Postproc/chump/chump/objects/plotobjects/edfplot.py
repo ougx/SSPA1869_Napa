@@ -87,7 +87,6 @@ class edfplot(figure):
             if 'xlim' not in self.dict:
                 self.ax.set_xlim(-1, 101)
 
-
         if self.onepage:
             self._nplot = 0
             self._bookmark = None

@@ -1,5 +1,5 @@
 set lst=Output.lst
-bin\MODFLOW-NWT_64.exe NVIHM.nam
+rem bin\MODFLOW-NWT_64.exe NVIHM.nam
 
 rem export budget
 findstr /R ^

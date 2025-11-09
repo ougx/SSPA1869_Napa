@@ -10,29 +10,22 @@ plotarg_loc = {markersize=25, facecolor='k', edgecolor='r', alpha=1, zorder=61, 
 source = 'Postproc\Data\obsgwl.csv'
 idcol = 'wellname'
 valcol = 'obsgwl'
+mintime = 2003-10-01
+maxtime = 2023-10-01
 plotarg = {linewidth=0.5, marker='.', color='black', zorder=2}
 location = {csv='obswells'}
 #mintime = 1940-01-01
 legend = true
 
+
+[tseries.obsgwlevel_calib] #SPECIFY CSV WITH COMPILED WELL OBSERVATION DATA
+parent = 'obsgwlevel'
+mintime = 2017-10-01
+
 [tseries.obsgwlevel_pst]
 parent = 'obsgwlevel'
 valcol = 'obsname'
 
-[tseries.obsgwleveldiff_pst]
-source = 'Postproc\Data\20250508_obsheaddiff.csv'
-idcol = 'MF6Name'
-valcol = 'obsname'
-plotarg = {linewidth=0.5, marker='.', color='black', zorder=2}
-location = {csv='obswells'}
-mintime = 1940-01-01
-legend = true
-
-[tseries.obsgwlevelmon] #SPECIFY CSV WITH COMPILED WELL OBSERVATION DATA
-source = 'Postproc\Data\20250529_SSPA_GWData_MonthlyAverage.csv'
-idcol = 'MF6Name'
-valcol = 'Observed'
-plotarg = {linewidth=0.5, color='black', zorder=2}
-location = {csv='obswells'}
-mintime = 1940-01-01
-legend = true
+[tseries.obsgwlevel_pst_calib]
+parent = 'obsgwlevel_pst'
+mintime = 2017-10-01

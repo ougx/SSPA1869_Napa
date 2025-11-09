@@ -23,7 +23,7 @@ idcol = 'wellname'
 plotargs = {Observed={linewidth=1, color='black', zorder=2},Simulated={linewidth=1, color='red', zorder=3}}
 location = {csv='obswells'}
 legend = true
-writedata = true
+# writedata = true
 
 [stat.headerr]
 data = {hobout='simgwlevel'}

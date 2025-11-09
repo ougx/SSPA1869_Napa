@@ -8,7 +8,7 @@ writeshp = true
 
 [tseries.obsflow]
 source = 'Postproc\Data\obsflow.csv'
-mintime = 1984-04-01
+mintime = 2003-10-01
 maxtime = 2023-10-01
 idcol = 'MFName'
 valcol = 'obscfs'
@@ -18,17 +18,18 @@ location = {csv='streamgage'}
 legend = true
 
 [tseries.obsflow_vol]
-source = 'Postproc\Data\obsflow.csv'
-mintime = 1984-04-01
-idcol = 'MFName'
-valcol = 'obscfs'
-rename = {columns={obscfs='Observed'}}
-plotarg = {linewidth=1.0, color='black', zorder=2}
-location = {csv='streamgage'}
-legend = true
+parent = "obsflow"
 rate_to_cumvol = true
 a_scale = 1.9834710743801653   # 1 cfs*day to AF/month
 
+
+[tseries.obsflow_calib]
+parent = "obsflow"
+mintime = 2017-10-01
+
+[tseries.obsflow_vol_calib]
+parent = "obsflow_vol"
+mintime = 2017-10-01
 
 [tseries.obsprleak_pst]
 source = 'Postproc\Data\20250508_pecosleak.csv'

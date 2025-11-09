@@ -11,56 +11,16 @@ xlabel = 'Observed groundwater elevation (feet)'
 ylabel = 'Simulated groundwater elevation (feet)'
 xlim = [-150, 550]
 ylim = [-150, 550]
-plotarg = {cmap='Paired', s=4, alpha=1.0}
+plotarg = {s=4, alpha=1.0}
 legend=true
 legendarg={ncols=5}
 text = [{x=-0.13, y=-0.1, text=" ", alpha=0.5}, {x=1.0, y=1.1, text=" ", alpha=0.5}]
 
-[scatterplot.annual_head1]
-parent = 'annual_head'
-exttable = {csv='obswell1'}
-
-[scatterplot.annual_head3]
-parent = 'annual_head'
-exttable = {csv='obswell3'}
-
-
-[scatterplot.head_diff]
-parent = 'annual_head'
-plotdata = [{pstres='seasonal_head'}]
-xlim = [-200, 400]
-ylim = [-200, 400]
-xlabel = 'Observed change in groundwater elevation (feet)'
-ylabel = 'Simulated change in groundwater elevation (feet)'
-
-[scatterplot.head_diff1]
-parent = 'head_diff'
-exttable = {csv='obswell1'}
-
-[scatterplot.head_diff3]
-parent = 'head_diff'
-exttable = {csv='obswell3'}
 
 
 [pdf.plotScatterplotHead]
 figsize = [8, 8]
 pages = {scatterplot=['gwlevel']}
-
-#################################################
-
-[scatterplot.annual_head_group]
-parent = 'annual_head'
-grouping = 'sgroup'
-segmented = true
-
-[scatterplot.head_diff_group]
-parent = 'head_diff'
-grouping = 'sgroup'
-segmented = true
-
-[ppdf.plotScatterplotHeadGroup]
-figsize = [8, 8]
-pages = {scatterplot=['annual_head_group', 'head_diff_group']}
 
 
 

@@ -19,10 +19,6 @@ text = [
 legend = true
 logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
 
-[tsplot.HydrographMon] #plotting the basemap, wells, observation data
-parent = 'HydrographYr'
-plotdata = {tseries=['obsgwlevelmon','simgwlevelmon']}
-
 [pdf.plotHydrograph]
 dpi = 200
 pages={tsplot = ['Hydrograph']}

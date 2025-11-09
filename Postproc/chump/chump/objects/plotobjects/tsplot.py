@@ -29,7 +29,7 @@ class tsplot(figure):
         start_date = None#pd.Timestamp('2260-12-31')
         # locations = []
         for ts in self.plotdata:
-            times = ts.dat.index.get_level_values('time')
+            times = ts.dat.index.get_level_values(ts.timecol)
             if end_date is None:
                 end_date = times.max()
                 start_date = times.min()

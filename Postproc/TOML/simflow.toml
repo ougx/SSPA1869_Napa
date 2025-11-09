@@ -2,6 +2,7 @@ include = ['Postproc\TOML\obsflow.toml', 'Postproc\TOML\global.toml']
 
 [tseries.simflow]
 source = 'Output_gage.csv'
+mintime = 2003-10-01
 idcol = "MFName"
 valcol = ['OUTFLOW']
 plotarg = {linewidth=1.0, color='red', zorder=2} # , marker='.'
@@ -10,16 +11,32 @@ a_scale = 1.1574074074074073e-05    # 1 / 86400
 legend = true
 rename = {columns={OUTFLOW='Simulated'}}
 resample = {rule='ME',func='mean'}
+writedata = true
 
 
-[tseries.simflow_vol]
-source = 'Output_gage.csv'
+[tseries.simflow_calib]
+source = "tseries.simflow.csv"
 idcol = "MFName"
-valcol = ['OUTFLOW']
+valcol = 'Simulated'
+mintime = 2017-10-01
 plotarg = {linewidth=1.0, color='red', zorder=2} # , marker='.'
 location = {csv='streamgage'}
 legend = true
-rename = {columns={OUTFLOW='Simulated'}}
-resample = {rule='ME',func='mean'}
+
+[tseries.simflow_vol]
+source = "tseries.simflow.csv"
+idcol = "MFName"
+valcol = 'Simulated'
+plotarg = {linewidth=1.0, color='red', zorder=2} # , marker='.'
+location = {csv='streamgage'}
+legend = true
+start_date = 2003-09-30         # set start date for cumulative volume calculation (delta time = time - start_date)
 rate_to_cumvol = true
-a_scale = 2.295684113865932e-05   # 1 cf to AF/month
+a_scale2 = 1.9834710743801651   # 1 cfs * days to af
+writedata = false
+
+[tseries.simflow_vol_calib]
+parent = "simflow_calib"
+start_date = 2017-09-30         # set start date for cumulative volume calculation (delta time = time - start_date)
+rate_to_cumvol = true
+a_scale2 = 1.9834710743801651   # 1 cfs * days to af

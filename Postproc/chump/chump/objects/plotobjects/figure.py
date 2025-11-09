@@ -120,16 +120,18 @@ class figure(mobject):
         if 'ticklabel_format' not in self.dict:
             ax.ticklabel_format(**self.dict.get('ticklabel_format', {}))
 
+        self.text = []
         if 'title' in self.dict:
             if isinstance(self.dict['title'], str):
-                self.title = ax.text(0.5, 0.95, self.dict['title'], ha='center', va='top', zorder=zorders['axtitle'], transform=ax.transAxes) #weight='bold',
+                text = ax.text(0.5, 1.01, self.dict['title'], ha='center', va='bottom', zorder=zorders['axtitle'], transform=ax.transAxes) #weight='bold',
             if isinstance(self.dict['title'], dict):
                 text = self.dict['title'].pop('text')
                 ha = self.dict['title'].pop('ha') if 'ha' in self.dict['title'] else 'center'
-                va = self.dict['title'].pop('va') if 'va' in self.dict['title'] else 'top'
-                self.title = ax.text(0.5, 0.95, text, transform=ax.transAxes, ha=ha, va=va, **self.dict['title']) #weight='bold',
+                va = self.dict['title'].pop('va') if 'va' in self.dict['title'] else 'bottom'
+                text = ax.text(0.5, 0.95, text, transform=ax.transAxes, ha=ha, va=va, **self.dict['title'])
+            text._orig = text.get_text()
+            self.text.append(text) #weight='bold',
 
-        self.text = []
         self.adjusttext = []
         for k, v in self.dict.items():
             if k.startswith('text'):
@@ -361,7 +363,9 @@ class figure(mobject):
                             raise ValueError(f'{droplevel} dimension is not found in {self}')
                 # indices.loc[:,~indices.columns.isin(index_names)] = indices.loc[:,~indices.columns.isin(index_names)].fillna(False)
                 for c in indices.columns:
-                    indices.loc[pd.isna(indices[c]), c] = False
+                    if c in index_names:
+                        continue
+                    indices[c] = np.where(indices[c].isna(), False, True)
 
                 if index_names:
                     for c in indices:

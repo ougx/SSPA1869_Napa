@@ -25,15 +25,15 @@ class mobject():
         """
         @private
         """
+        self.type = type(self).__name__
+        """
+        @private
+        """
         self.parent = mplot
         """
         @private
         """
         self.verbose = mplot.verbose
-        """
-        @private
-        """
-        self.dict = getattr(mplot, type(self).__name__).get(name, dict())
         """
         @private
         """
@@ -44,13 +44,6 @@ class mobject():
         self._dat = None
         self._nplot = None
 
-        while 'parent' in self.dict:
-            parent = mplot.dict[type(self).__name__].get(self.dict.pop('parent'), None)
-            if parent is not None:
-                for k, v in parent.items():
-                    if k not in self.dict:
-                        self.dict[k] = v
-
         self.time_unit: str = self.dict.get('time_unit',
                                        self.parent.dict.get('time_unit', 'D') if self.parent is not None else 'D')
         '''
@@ -58,7 +51,7 @@ class mobject():
 
         '''
 
-        self.start_date: str | datetime = self.dict['start_date'] if 'start_date' in self.dict else mplot.start_date
+        self.start_date: str | datetime = pd.Timestamp(self.dict['start_date']) if 'start_date' in self.dict else mplot.start_date
         '''
         starting date for time related data. The time will be parsed into timestamps using the starting date and time unit.
         If not set, it will use the global setting.
@@ -141,7 +134,26 @@ class mobject():
         """
         @private
         """
-        return f"{type(self).__name__}.{self.name}"
+        return f"{self.type}.{self.name}"
+
+    @property
+    def dict(self):
+        """
+        @private
+        """
+        if getattr(self, "_dict", None) is None:
+            olddict = self.parent.dict[self.type].get(self.name, {})
+            self._dict = {}
+            for k, v in olddict.copy().items():
+                if k != 'parent':
+                    self._dict[k] = v
+                else:
+                    parent = self._getobj({self.type:olddict['parent']})
+                    if parent is not None:
+                        for kk, vv in parent.dict.items():
+                            if kk not in self._dict:
+                                self._dict[kk] = vv
+        return self._dict
 
     @property
     def nplot(self):
@@ -180,7 +192,7 @@ class mobject():
             print(self.fullname, 't_scale   ', self.t_scale)
             print(self.fullname, 't_offset  ', self.t_offset)
 
-        if is_string_dtype(times):
+        if not is_numeric_dtype(times):
             return pd.to_datetime(times)
 
         if is_true(self.start_date):

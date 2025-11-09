@@ -19,14 +19,26 @@ text = [
 legend = true
 logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
 
+[tsplot.Streamflow_calib]
+parent = "Streamflow"
+plotdata = [{tseries='obsflow_calib'}, {tseries='simflow_calib'}]
+
 [tsplot.Streamflow_log]
 parent = "Streamflow"
+yscale = 'log'
+
+[tsplot.Streamflow_log_calib]
+parent = "Streamflow_calib"
 yscale = 'log'
 
 [tsplot.Streamflow_Vol]
 parent = "Streamflow"
 plotdata = [{tseries='obsflow_vol'}, {tseries='simflow_vol'}]
 ylabel = 'Cumulative flow volume (acrefeet)'
+
+[tsplot.Streamflow_Vol_calib]
+parent = "Streamflow_Vol"
+plotdata = [{tseries='obsflow_vol_calib'}, {tseries='simflow_vol_calib'}]
 
 [shp.peco_leak]
 source = 'Postproc\Data\shp_AcmeToArtesiaSeepage.zip'
@@ -50,10 +62,22 @@ logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8
 dpi = 200
 pages={tsplot = ['Streamflow']}
 
+[pdf.plotStreamflow_calib]
+dpi = 200
+pages={tsplot = ['Streamflow_calib']}
+
 [pdf.plotStreamflow_Log]
 dpi = 200
 pages={tsplot = ['Streamflow_log']}
 
+[pdf.plotStreamflow_Log_calib]
+dpi = 200
+pages={tsplot = ['Streamflow_log_calib']}
+
 [pdf.plotStreamflow_Vol]
 dpi = 200
 pages={tsplot = ['Streamflow_Vol']}
+
+[pdf.plotStreamflow_Vol_calib]
+dpi = 200
+pages={tsplot = ['Streamflow_Vol_calib']}

@@ -90,28 +90,31 @@ def lfunc(obj, key):
         obj._dat  = obj._dat.agg(obj.dict[key])
     obj._dat.loc[:,nas.values] = np.nan
 
+
 def mintime(obj, key):
-    index_names = get_index_names(obj._dat)
-    dat = obj._dat.reset_index()
-    if 'time' in dat.columns:
-        times = obj._dat.index.get_level_values(obj.timecol)
+    dat = obj.dat.reset_index()
+    if obj.timecol in dat.columns:
+        times = dat[obj.timecol].values
         mintime = obj.dict[key]
         if obj.start_date:
             if is_numeric_dtype(mintime):
                 mintime = obj.start_date + pd.Timedelta(mintime, obj.time_unit)
+        if not is_numeric_dtype(times):
             mintime = pd.Timestamp(mintime)
-        obj._dat  = obj._dat[times>=mintime]
+        obj._dat  = obj._dat.loc[times>=mintime].copy()
 
 
 def maxtime(obj, key):
-    if 'time' in get_index_names(obj._dat):
-        times = obj._dat.index.get_level_values(obj.timecol)
+    dat = obj.dat.reset_index()
+    if obj.timecol in dat.columns:
+        times = dat[obj.timecol].values
         maxtime = obj.dict[key]
         if obj.start_date:
             if is_numeric_dtype(maxtime):
                 maxtime = obj.start_date + pd.Timedelta(maxtime, obj.time_unit)
+        if not is_numeric_dtype(times):
             maxtime = pd.Timestamp(maxtime)
-        obj._dat  = obj._dat[times<=maxtime]
+        obj._dat  = obj._dat.loc[times<=maxtime].copy()
 
 
 def tfunc(obj, key):

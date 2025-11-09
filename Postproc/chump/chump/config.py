@@ -8,7 +8,8 @@ import encodings.idna # import for pyinstaller
 #import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import pandas as pd
-from .objects import dataobjects, modelobjects
+
+from .objects import dataobjects, modelobjects, plotobjects
 from . import operations
 from copy import copy
 
@@ -176,7 +177,7 @@ class config():
         """
         initialize the elements
         """
-        for o in [dataobjects, modelobjects]:
+        for o in [dataobjects, modelobjects, plotobjects]:
             for e in dir(o):
                 if e.startswith("__"): continue
                 element = getattr(self, e, None)

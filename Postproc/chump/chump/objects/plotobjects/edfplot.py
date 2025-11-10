@@ -53,7 +53,7 @@ class edfplot(figure):
         # calculate the difference/error/residual
         if self.dict.get('diff', False):
             self.xcol = self.dict.get('xcol', 'Observed')
-            if self._dat[self.xcol].shape[1] > 1:
+            if len((self._dat[self.xcol]).shape) > 1:
                 x = self._dat[self.xcol].mean(axis=1)
                 self._dat.drop(columns=[self.xcol], inplace=True)
                 self._dat[self.xcol] = x

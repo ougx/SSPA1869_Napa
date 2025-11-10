@@ -13,6 +13,11 @@ plotarg_stat = {fontsize=10}
 text = [{x=-0.10, y=-0.1, text=" ", alpha=0.5}, ]
 logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}
 
+[edfplot.gwlevelerr]
+parent = "gwlevel"
+diff = true
+title = "Exccedence Plot of Simulated Groundwater Level Residuals"
+
 [edfplot.streamflow]
 figsize = [8, 4]
 plotdata = [{tseries='simflow'}, {tseries='obsflow'}, ]
@@ -65,4 +70,4 @@ plotdata = [{tseries='simflow_napa'}, {tseries='obsflow_napa'}, ]
 
 
 [pdf.plotEcdf]
-pages = {edfplot=["gwlevel", "streamflow_log_helena", "streamflow_log_napa"]}
+pages = {edfplot=["gwlevel", "gwlevelerr","streamflow_log_helena", "streamflow_log_napa"]}

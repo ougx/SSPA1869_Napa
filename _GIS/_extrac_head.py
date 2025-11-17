@@ -1,7 +1,9 @@
 import flopy
 import numpy as np
+import pandas as pd
 from pyproj import CRS
 import rasterio
+import matplotlib.pyplot as plt
 
 def save_tif(tif, array, xmin, ymin, dx, dy=None, NODATA_value=0, dtype=None, compress="LZW", zlevel=9, crs="epsg:4326", rotation=0):
     """
@@ -79,9 +81,35 @@ for i in range(nlay):
 
 save_tif("head_198404_flood.tif", np.maximum(0, head[ 0,0]-top), xll, yll, dx, dy, NODATA_value=0, crs=f"epsg:{epsg}", rotation=rotation)
 save_tif("head_202309_flood.tif", np.maximum(0, head[-1,0]-top), xll, yll, dx, dy, NODATA_value=0, crs=f"epsg:{epsg}", rotation=rotation)
+save_tif("head_highest_flood.tif", np.maximum(0, head[ :,0].max(axis=0)-top), xll, yll, dx, dy, NODATA_value=0, crs=f"epsg:{epsg}", rotation=rotation)
+save_tif("head_lowest_flood.tif", np.maximum(0, head[ :,0].min(axis=0)-top), xll, yll, dx, dy, NODATA_value=0, crs=f"epsg:{epsg}", rotation=rotation)
 
 save_tif("head_top_highest.tif", head[ :,0].max(axis=0), xll, yll, dx, dy, NODATA_value=-99999, crs=f"epsg:{epsg}", rotation=rotation)
 save_tif("head_top_lowest.tif",  head[ :,0].min(axis=0), xll, yll, dx, dy, NODATA_value=-99999, crs=f"epsg:{epsg}", rotation=rotation)
 
 save_tif("head_bedrock_highest.tif", head[ :,-1].max(axis=0), xll, yll, dx, dy, NODATA_value=-99999, crs=f"epsg:{epsg}", rotation=rotation)
 save_tif("head_bedrock_lowest.tif",  head[ :,-1].min(axis=0), xll, yll, dx, dy, NODATA_value=-99999, crs=f"epsg:{epsg}", rotation=rotation)
+
+#%% read obs
+plt.style.use("seaborn-v0_8-whitegrid")
+obs = pd.read_csv("../Postproc/Data/obsgwl.csv")
+obs.obsname = obs.obsname.str.upper()
+obs.time    = pd.to_datetime(obs.time)
+sim = pd.read_csv("../Output_HOB.out", sep="\\s+")
+
+sim = pd.merge(sim, obs, left_on="OBSERVATION NAME", right_on="obsname")
+
+wells = pd.read_csv("../headerr.csv").set_index("wellname")
+# wells["png"] = [rf"file:///simhead\{w}.png" for w in wells.wellname]
+# wells["png"] = [rf"simhead\{w}.png" for w in wells.wellname]
+# wells.to_csv("wells.csv", index=False)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+for w, df in sim.groupby("wellname"):
+    if w not in wells.index: continue
+    ax.clear()
+    df.set_index("time").iloc[:,:2].plot(ax=ax, color=["r", "k"], )
+    ax.legend()
+    ax.set(title=f"{w}; Layer: {wells.loc[w, 'layertop']} - {wells.loc[w, 'layerbot']}", xlim=["1984", "2023-11"])
+    fig.savefig(f"simhead/{w}.png", dpi=150, bbox_inches="tight")
+

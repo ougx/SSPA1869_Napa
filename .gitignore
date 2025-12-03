@@ -48,3 +48,5 @@ hobout.*
 _GIS/*.png
 _GIS/simhead/*.png
 InputFiles/GHB/GHB.ghb
+AGWO_MODFLOW_m3.csv
+InputFiles/SFR/SFR.sfr

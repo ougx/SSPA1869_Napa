@@ -40,4 +40,4 @@ tdis = pd.read_csv("Postproc/times _sp.csv")
 tdis["dt"] = tdis.time.diff()
 tdis.loc[0, "dt"] = 30
 
-(sfrout * tdis.loc[sfrout.reset_index()["period"]-1, ["dt"]].values*(.3048**3)).to_csv("AGWO_MODFLOW.csv")
+(sfrout * tdis.loc[sfrout.reset_index()["period"]-1, ["dt"]].values*(.3048**3)).to_csv("AGWO_MODFLOW_m3.csv")

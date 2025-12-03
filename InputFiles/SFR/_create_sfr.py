@@ -18,9 +18,9 @@ sfr.REACH = sfr.REACH[sfr.REACH.ISEG.astype(int)<=sfr.NSS]
 sfr.NSTRM = len(sfr.REACH)
 
 
-sw = pd.read_csv(r"d:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\02_Incoming\20251105_LSPCoutput\Streams_WaterBalanceParams_20251105-175622_m3.csv")
+sw = pd.read_csv(r"02_Incoming\20251105_LSPCoutput\Streams_WaterBalanceParams_20251105-175622_m3.csv")
 sw["date"] = pd.to_datetime(sw.DTTM)
-dv = pd.read_csv(r"d:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\02_Incoming\20251105_LSPCoutput\Actual_PointSource_Withdrawals_CubicFeetperMonth.csv")
+dv = pd.read_csv(r"02_Incoming\20251105_LSPCoutput\Actual_PointSource_Withdrawals_CubicFeetperMonth.csv")
 dv["date"] = pd.to_datetime(dv.date)
 dv["SWSID"] = dv.rchid
 sw = pd.merge(sw, dv, on=["SWSID", "date"])
@@ -64,7 +64,7 @@ sfr.IRDFLG = [1,] * nper
 sfr.IPTFLG = [0,] * nper
 sfr.NP     = [0,] * nper
 sfr.sp = sps
-sfr.write_package("SFR.sfr")
+sfr.write_package(r"05_Model\NVIHM_SWRCB_NWT_LSPC\InputFiles\SFR\SFR.sfr")
 
 sw_route .to_csv(r"03_Analyse\20251105_LSPCoutput_QA\modflow_inflows_cfd.csv")
 sw_runoff.to_csv(r"03_Analyse\20251105_LSPCoutput_QA\modflow_runoff_cfd.csv")

@@ -1,15 +1,17 @@
 import pandas as pd
 import numpy as np
+import os
 import sys
 if r"C:\Cloud\Dropbox\PythonScripts\a0_util" not in sys.path:
     sys.path.insert(0, r"C:\Cloud\Dropbox\PythonScripts\a0_util")
 import MODFLOW
 
+os.chdir(os.path.join(os.environ["ONEDRIVE"], "1869-SWRCB_Napa"))
 #%%
-route = pd.read_csv(r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\05_Model\00_model_meta\sfr_transfer_matrix_inflow2.csv", index_col=0)
-runoff = pd.read_csv(r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\05_Model\00_model_meta\sfr_transfer_matrix_runoff2.csv", index_col=0)
+route = pd.read_csv(r"05_Model\00_model_meta\sfr_transfer_matrix_inflow2.csv", index_col=0)
+runoff = pd.read_csv(r"05_Model\00_model_meta\sfr_transfer_matrix_runoff2.csv", index_col=0)
 
-sfr = MODFLOW.mf_sfr(r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\05_Model\NVIHM_SWRCB_NWT\InputFiles\SFR\SFR.sfr", 1)
+sfr = MODFLOW.mf_sfr(r"05_Model\NVIHM_SWRCB_NWT\InputFiles\SFR\SFR.sfr", 1)
 sfr.TABFILES = None
 sfr.NSS = 157
 sfr.REACH = sfr.REACH[sfr.REACH.ISEG.astype(int)<=sfr.NSS]
@@ -24,7 +26,7 @@ dv["SWSID"] = dv.rchid
 sw = pd.merge(sw, dv, on=["SWSID", "date"])
 
 sw_route = sw[sw.SWSID.isin(route.index)].copy()
-sw_route["q"] = ((sw_route.AGWO + sw_route.SURO + sw_route.IFWO) / (.3048**3)  - sw_route.PointSource_Withdrawls_cubicFeetperMonth) / sw_route.date.dt.day
+sw_route["q"] = ((sw_route.SURO + sw_route.IFWO) / (.3048**3)  - sw_route.PointSource_Withdrawls_cubicFeetperMonth) / sw_route.date.dt.day
 sw_route = sw_route.pivot(index="date", columns="SWSID", values="q")
 sw_route = sw_route.sort_index().loc["1984-04":].T.sort_index().T @ route
 
@@ -64,5 +66,5 @@ sfr.NP     = [0,] * nper
 sfr.sp = sps
 sfr.write_package("SFR.sfr")
 
-sw_route .to_csv(r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\03_Analyse\20251105_LSPCoutput_QA\modflow_inflows_cfd.csv")
-sw_runoff.to_csv(r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\03_Analyse\20251105_LSPCoutput_QA\modflow_runoff_cfd.csv")
+sw_route .to_csv(r"03_Analyse\20251105_LSPCoutput_QA\modflow_inflows_cfd.csv")
+sw_runoff.to_csv(r"03_Analyse\20251105_LSPCoutput_QA\modflow_runoff_cfd.csv")

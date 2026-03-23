@@ -1,0 +1,46 @@
+-1   -1.00E+30   0   0        # 1: IUPWCBC HDRY NPUPW IPHDRY
+1  1  1  1  1  1  1  1  1  1    # 2: LAYTYP
+0  0  0  0  0  0  0  0  0  0    # 3: LAYAVG
+1  1  1  1  1  1  1  1  1  1    # 4: CHANI
+0  0  0  0  0  0  0  0  0  0    # 5: LAYVKA
+0  0  0  0  0  0  0  0  0  0    # 6: LAYWET
+constant 1.00  HK Layer  1
+constant 1.00  VK Layer  1
+constant 1.00  SS Layer  1
+constant 1.00  SY Layer  1
+constant 1.00  HK Layer  2
+constant 1.00  VK Layer  2
+constant 1.00  SS Layer  2
+constant 1.00  SY Layer  2
+constant 1.00  HK Layer  3
+constant 1.00  VK Layer  3
+constant 1.00  SS Layer  3
+constant 1.00  SY Layer  3
+constant 1.00  HK Layer  4
+constant 1.00  VK Layer  4
+constant 1.00  SS Layer  4
+constant 1.00  SY Layer  4
+constant 1.00  HK Layer  5
+constant 1.00  VK Layer  5
+constant 1.00  SS Layer  5
+constant 1.00  SY Layer  5
+constant 1.00  HK Layer  6
+constant 1.00  VK Layer  6
+constant 1.00  SS Layer  6
+constant 1.00  SY Layer  6
+constant 1.00  HK Layer  7
+constant 1.00  VK Layer  7
+constant 1.00  SS Layer  7
+constant 1.00  SY Layer  7
+constant 1.00  HK Layer  8
+constant 1.00  VK Layer  8
+constant 1.00  SS Layer  8
+constant 1.00  SY Layer  8
+constant 1.00  HK Layer  9
+constant 1.00  VK Layer  9
+constant 1.00  SS Layer  9
+constant 1.00  SY Layer  9
+constant 1.00  HK Layer  10
+constant 1.00  VK Layer  10
+constant 1.00  SS Layer  10
+constant 1.00  SY Layer  10

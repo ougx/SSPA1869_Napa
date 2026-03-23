@@ -1,0 +1,12 @@
+# Napa Valley Integrated Hydrologic Model (NVIHM) Version 1 (9/4/2020)
+# MODFLOW One-Water Version 2b
+
+###### OUTPUT FILES  ######
+LIST                  9  Output.lst
+
+###### GLOBAL FILES ######
+DIS                   8  napa.dis   
+
+###### INPUT FILES ######
+BAS6                 20  napa.bas 		# Basic package (options, ibound, starting heads)     
+UPW                  23  napa.upw		# Upstream weighting package (layer properties)

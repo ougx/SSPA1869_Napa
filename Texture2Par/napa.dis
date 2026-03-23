@@ -1,0 +1,18 @@
+# Napa Valley Integrated Hydrologic Model (NVIHM)
+# MODFLOW Discretization Package
+10  489  180  1  4  1                                                       # 1: NLAY, NROW, NCOL, NPER, ITMUNI, LENUNI
+0  0  0  0  0  0  0  0  0  0                                                  # 2: LAYCBD (No Quasi 3D Confining Beds)
+CONSTANT  500                                                                 # 3: DELR (Width along rows)
+CONSTANT  500                                                                 # 4: DELC (Width along columns)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\LandSurface.txt  1 (FREE) -1   # 5: Top - U2DREL (Model Top Elevation)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay1Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 1)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay2Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 2)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay3Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 3)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay4Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 4)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay5Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 5)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay6Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 6)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay7Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 7)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay8Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 8)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay9Bottom.txt   1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 9)
+OPEN/CLOSE  ..\Data_ModelArrays\LayerElevations\Lay10Bottom.txt  1 (FREE) -1   # 5: BOTM - U2DREL (Bottom Elevation - Layer 10)
+30   2   1   TR   STARTDATE 04/01/1984                                        # 7: PERLEN, NSTP, TSMULT, SS/TR (SP 1 - Apr-1984)

@@ -1,7 +1,9 @@
 import numpy as np
 import flopy
 import pandas as pd
+import sys
 
+gwi = sys.argv[1]
 
 nlay     = 10       #
 nrow     = 489      #
@@ -13,7 +15,7 @@ dx       = 500      # feet
 dy       = 500      # feet
 rotation = 20       # degree
 CRS      = 2226     # epsg
-rch_lspc = np.loadtxt(r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\02_Incoming\20251105_LSPCoutput\GWI_20251105-175147.rch")
+rch_lspc = np.loadtxt(gwi) / 0.3048
 rch_lspcs = rch_lspc.reshape([-1, nrow, ncol])[3:] # skip 1984-01 to 1984-03
 
 times = pd.date_range("1984-04-01", periods=999, freq="MS")

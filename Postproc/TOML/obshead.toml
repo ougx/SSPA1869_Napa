@@ -25,6 +25,7 @@ mintime = 2017-10-01
 [tseries.obsgwlevel_pst]
 parent = 'obsgwlevel'
 valcol = 'obsname'
+exclude = "weights == 0"
 
 [tseries.obsgwlevel_pst_calib]
 parent = 'obsgwlevel_pst'

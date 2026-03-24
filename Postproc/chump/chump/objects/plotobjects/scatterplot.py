@@ -35,7 +35,6 @@ class scatterplot(figure):
         """create multiple segmented regression lines for each group. """
 
 
-
     def _loaddata(self):
         super()._loaddata()
 
@@ -121,8 +120,8 @@ class scatterplot(figure):
         self.emin = np.nanmin(self.err.values * self.errfact)
         self.emax = np.nanmax(self.err.values * self.errfact)
 
-        if is_true(self.exclude) and is_true(self.indextable):
-            self.exclude = merge_id_df(self.exclude, self.indextable, newindex='left').set_index(self.xcol)[self.labels].stack().squeeze().swaplevel()
+        if is_true(self.exclude) and is_true(self.exttable):
+            self.exclude = merge_id_df(self.exclude, self.exttable, newindex='left').set_index(self.xcol)[self.labels].stack().squeeze().swaplevel()
 
         # both log scale if any of it is log scale
         if self.dict.get('xscale') == 'log' or self.dict.get('yscale') == 'log':
@@ -168,6 +167,8 @@ class scatterplot(figure):
             plotarg = self.plotarg.copy()
             plotarg['c'] = self.dict.get('exclude_color', 'grey')
             plotarg['zorder'] = plotarg['zorder'] - 1
+            if 'cmap' in plotarg:
+                plotarg.pop('cmap')
             self.scexclude = ax.scatter([], [], **plotarg) #
 
 
@@ -419,8 +420,9 @@ class scatterplot(figure):
                     # f'Agreement : {r2(self.x, self.y)     :10.6G}\n' + \
 
                 self.stattext.set_text("\n".join(left_adjust(stattext+regeq)))
+
             if is_true(self.exclude):
-                xexclude = self.exclude[self.xcol]
+                xexclude = self.exclude[l].index
                 yexclude = self.exclude[l]
                 self.scexclude.set_offsets(np.array([xexclude, (yexclude-xexclude)*errfact if self.yerror else yexclude ]).T)
 

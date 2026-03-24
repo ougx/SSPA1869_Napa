@@ -20,6 +20,11 @@ class edfplot(figure):
     Returns:
         [type]: [description]
     """
+    
+    def __init__(self,name, mplot, *args, **kwargs):
+        super().__init__(name, mplot, *args, **kwargs)
+        
+
     def _loaddata(self):
         super()._loaddata()
 
@@ -89,14 +94,19 @@ class edfplot(figure):
 
         if self.onepage:
             self._nplot = 0
-            self._bookmark = None
+            self._bookmark = []
             legends = {}
             for i, c in enumerate(self.dat.columns):
                 d = pd.Series(self.dat[c].rank(method='average', pct=True).values * 100, index=self.dat[c].values, name=c).sort_index()
+                plotarg = self.dict.get('plotarg', {})
+                if 'plotargs' in self.dict:
+                    plotargs = self.dict['plotargs']
+                    if c in plotargs:
+                        plotarg.update(plotargs[c])
                 if self.val_on_xaxis:
-                    legends[c] = ax.plot( d.index, d.values, label=c, color=f'C{i}', **self.plotarg)[0]
+                    legends[c] = ax.plot( d.index, d.values, label=c, **plotarg)[0]
                 else:
-                    legends[c] = ax.plot( d.values, d.index, label=c, color=f'C{i}', **self.plotarg)[0]
+                    legends[c] = ax.plot( d.values, d.index, label=c, **plotarg)[0]
 
             self.legends = legends
         else:

@@ -75,6 +75,9 @@ class mobject():
         plotting argument for the object
         '''
 
+        self.plotargs = copy(self.dict.get('plotargs', {}))
+        """plotting arguments for each data column"""
+
         self.legend = self.dict.get('legend', False)
         '''
         whether to show the legend

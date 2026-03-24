@@ -56,14 +56,8 @@ def drop(obj, key):
 
 
 def filter(obj, key):
-    obj._dat = obj._dat.query(obj.dict[key])
-
-
-def exclude(obj, key):
-    obj.exclude = obj._dat.query(obj.dict[key])
-    obj._dat = obj._dat[~obj._dat.index.isin(obj.exclude.index)]
-    if obj.exclude.shape[0] == 0:
-        obj.exclude = None
+    if obj.dict[key]:
+        obj._dat = obj._dat.query(obj.dict[key])
 
 
 def minlayer(obj, key):
@@ -307,3 +301,10 @@ def extfunc(obj, key):
 def writefunc(obj, key):
     writefunc = importlib.import_module(obj.dict[key].strip().rstrip('.py'))
     writefunc.writefunc(obj)
+
+
+def exclude(obj, key):
+    obj.exclude = obj._dat.query(obj.dict[key])
+    obj._dat = obj._dat[~obj._dat.index.isin(obj.exclude.index)]
+    if obj.exclude.shape[0] == 0:
+        obj.exclude = None

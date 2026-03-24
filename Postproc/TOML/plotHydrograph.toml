@@ -14,7 +14,7 @@ ylabel = 'Groundwater Elevation (feet)'
 yrange = 20
 exttable = {csv='obswells'}
 text = [
-    {x=0.03, y=0.03, text='{wellname}\nLayer {layer}', va='bottom', ha='left'},
+    {x=0.03, y=0.03, text='{wellname}\nLayer {layertop} ~ {layerbot}', va='bottom', ha='left'},
 ]
 legend = true
 logo = {source='Postproc\Data\ss-papadopulos-and-associates-logo.png', alpha=0.8}

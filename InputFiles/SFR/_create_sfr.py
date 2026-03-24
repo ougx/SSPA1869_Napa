@@ -9,6 +9,7 @@ import MODFLOW
 lspc_ver = sys.argv[1]
 lspc_stream = sys.argv[2]
 lspc_withdraw = sys.argv[3]
+lspc_lake = sys.argv[4].strip()
 
 # lspc_ver      = "20260306_LSPCoutput"
 # lspc_stream   = r"c:\Cloud\OneDrive - S.S. Papadopulos & Associates, Inc\1869-SWRCB_Napa\02_Incoming\20260306_LSPCoutput\Streams_WaterBalanceParams_20260306-142227_m3.csv"
@@ -19,6 +20,7 @@ os.chdir(os.path.join(os.environ["ONEDRIVE"], "1869-SWRCB_Napa"))
 #%%
 sw = pd.read_csv(lspc_stream)
 dv = pd.read_csv(lspc_withdraw)
+lk = pd.read_csv(lspc_lake) if lspc_lake.endswith("csv") else pd.read_excel(lspc_lake)
 route = pd.read_csv(r"05_Model\00_model_meta\sfr_transfer_matrix_inflow2.csv", index_col=0)
 runoff = pd.read_csv(r"05_Model\00_model_meta\sfr_transfer_matrix_runoff2.csv", index_col=0)
 sfrorder = pd.read_csv(r"05_Model\00_model_meta\sfr_segment_order.csv", index_col=0)
@@ -34,6 +36,7 @@ sfrorder.loc[sfrorder.OUTSEG>sfr.NSS, "OUTSEG"] = 0
 
 sw["date"] = pd.to_datetime(sw.DTTM)
 dv["date"] = pd.to_datetime(dv.date)
+lk["Date"] = pd.to_datetime(lk.Date)
 dv["SWSID"] = dv.rchid
 sw = pd.merge(sw, dv, on=["SWSID", "date"], how="outer")
 
@@ -77,6 +80,9 @@ sw_route = sw_route - sw_dv1 - sw_dv2
 
 sw_route[:]  = np.where(sw_route .abs()<1e-5, 0.0, sw_route )
 sw_runoff[:] = np.where(sw_runoff.abs()<1e-5, 0.0, sw_runoff)
+
+lk = lk.set_index("Date", ).loc["1984-04":]
+sw_route.loc["1984-04":, 106] += (lk["PCP"]-lk["EVAP"]-lk["Change in Storage"])
 
 nper = 474
 sps = {}

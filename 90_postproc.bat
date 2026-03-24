@@ -1,5 +1,5 @@
 @echo off
-
+python Postproc\_plotParameters.py
 python Postproc\chump\chumpCmd.py stat Postproc\TOML\simhead.toml
 python Postproc\chump\chumpCmd.py plot Postproc\TOML\plotHydrograph.toml
 python Postproc\chump\chumpCmd.py plot Postproc\TOML\plotScatterplot.toml
